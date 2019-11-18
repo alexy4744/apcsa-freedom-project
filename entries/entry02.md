@@ -31,13 +31,13 @@ But basically theres 2 really important things here
 
 Another thing to notice is that none of the services share the same database. This means that each service is only responsible for their own data.
 
-What is powerful about this architecture is that no services depend on each other. In a traditional monolithic application, since the logic is tightly coupled, it is not uncommon for something like the statistics API route to break, and the problem bubbles up to other parts of the application. With this architecture, if the any one of the services go down, you can guarantee that absolutely no other service will be affected.
+What is powerful about this architecture is that no services depend on each other. In a traditional monolithic application, since the logic is tightly coupled, it is not uncommon for something like the statistics API route to break, and the problem bubbles up to other parts of the application. With this architecture, if any one of the services break, you can guarantee that absolutely no other service will be affected.
 
 Additionally, since each service isn't tightly coupled together, they can be written using completely different tools/languages. And because they also don't share the same database, one service can be using MongoDB as a database while another uses PostgreSQL.
 
 In the future, if for whatever reason one service needs to communicate to another, we can implement a message broker or something.
 
-In addition to microservices, we will write our code using the [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) to promote isolation within our microservices.
+In addition to microservices, we will write our code using the [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) to promote independence and flexibility within our microservices.
 
 ![](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
 
